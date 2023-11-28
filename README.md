@@ -45,9 +45,10 @@ Learn more [here](./objective.md).
 └── README.md
 ```
 
-Things to lookout for when running the pass:
-- Make sure [nlohmann-json](https://github.com/nlohmann/json) is installed
-- Make sure the LLVM include dir and [nlohmann-json](https://github.com/nlohmann/json) include dir are included in `BranchPointerPass/CMakeLists.txt`
+> [!NOTE]
+> Things to lookout for when running the pass:
+> - Make sure [nlohmann-json](https://github.com/nlohmann/json) is installed
+> - Make sure the LLVM include dir and [nlohmann-json](https://github.com/nlohmann/json) include dir are included in `BranchPointerPass/CMakeLists.txt`
 
 
 ## Prerequisites
