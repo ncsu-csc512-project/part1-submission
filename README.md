@@ -37,9 +37,9 @@ Learn more [here](./objective.md).
 │  ├── setup-vcpkg.sh          # install vcpkg and nlohmann-json
 │  ├── ubuntu-install-llvm.sh  # install LLVM 17 on Ubuntu
 │  └── valgrind-instruction-count-demo.sh
-|── valgrind-extra
-|  ├── configure.ac            # copy to valgrind root dir to build the `branch` tool
-|  └── Makefile.am
+│── valgrind-extra
+│  ├── configure.ac            # copy to valgrind root dir to build the `branch` tool
+│  └── Makefile.am
 ├── BranchPointerPass
 │  ├── BranchPointerPass.cpp   # LLVM pass code for key points detection
 │  └── CMakeLists.txt

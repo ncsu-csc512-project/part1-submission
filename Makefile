@@ -72,6 +72,9 @@ sync-to-submission-repo-dryrun:
 sync-to-submission-repo:
 	rsync -au --delete --progress -h --include-from='include.txt' ./ ../part1-submission/
 	
+push-and-open-submission-repo:
+	cd ../part1-submission/ && git add . && git commit -m "update" && git push origin master && cd - && open https://github.com/ncsu-csc512-project/part1-submission
+
 update-vcl:
 	rsync -au --progress -h . vcl:1 --exclude 'build' --exclude '.git'
 
