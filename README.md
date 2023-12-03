@@ -87,7 +87,7 @@ Learn more [here](./objective.md).
 > Things to lookout for when running the pass:
 > - Make sure [nlohmann-json](https://github.com/nlohmann/json) is installed
 > - Make sure the LLVM include dir and [nlohmann-json](https://github.com/nlohmann/json) include dir are included in `BranchPointerPass/CMakeLists.txt`
-> - **If on Ubuntu, running `make` will set up everything for you**, including installation of LLVM 17, vcpkg, and nlohmann-json. `make` will invoke a few scripts to install these dependencies and build the pass. You may be asked to press <kbd>Enter</kbd> to accept LLVM's license agreement. Read [`Makefile`](./Makefile) for more details.
+> - **If on Ubuntu, running `make || make` will set up everything for you**, including installation of LLVM 17, vcpkg, and nlohmann-json. `make` will invoke a few scripts to install these dependencies and build the pass. You may be asked to press <kbd>Enter</kbd> to accept LLVM's license agreement. Read [`Makefile`](./Makefile) for more details.
 > - If you see this error `CMake Error: CMake was unable to find a build program corresponding to "Unix Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.` when running `make`, please re-run the command - sometimes it takes a few tries to get it to work.
 
 
