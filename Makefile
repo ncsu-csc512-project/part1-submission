@@ -75,8 +75,9 @@ sync-to-submission-repo:
 push-and-open-submission-repo:
 	cd ../part1-submission/ && git add . && git commit -m "update" && git push origin master && cd - && open https://github.com/ncsu-csc512-project/part1-submission
 
-push-and-sync-all:
-	git add . && git commit -m "update" && git push origin master && make sync-to-submission-repo && make push-and-open-submission-repo
+push-and-sync-all: sync-to-submission-repo
+	# git add . && git commit -m "update" && git push origin master && make sync-to-submission-repo && make push-and-open-submission-repo
+	git-pp -p . ../part1-submission/
 
 update-vcl:
 	rsync -au --progress -h . vcl:1 --exclude 'build' --exclude '.git'
