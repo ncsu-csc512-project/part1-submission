@@ -92,8 +92,10 @@ Learn more [here](./objective.md).
 
 
 ## Prerequisites
-- LLVM >= 16.0 installed
-- CMake installed
+> [!TIP]
+> If on Ubuntu, just run `make prereq` to install everything automatically (you may be asked to press <kbd>Enter</kbd> to accept LLVM's license agreement). Read [`Makefile`](./Makefile) for more details.
+- LLVM >= 16.0 installed (`./scripts/ubuntu-install-llvm.sh`)
+- CMake installed (`sudo apt install cmake -y`)
 - C++ compiler (e.g., g++, clang)
 
 ### 3rd party libraries

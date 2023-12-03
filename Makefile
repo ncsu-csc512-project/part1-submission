@@ -46,6 +46,8 @@ build_dir:
 prereq:
 	# if on ubuntu and clang-17 not found, run scripts/ubuntu-install-llvm.sh
 	if [ ! -f $(CLANG_COMMAND) ]; then ./scripts/ubuntu-install-llvm.sh; fi
+	# if cmake not installed
+	if [ ! -f /usr/bin/cmake ]; then sudo apt install cmake -y; fi
 	
 
 
