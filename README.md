@@ -92,6 +92,9 @@ Learn more [here](./objective.md).
 
 
 ## Prerequisites
+> [!IMPORTANT]
+> Please use a **clean** VCL VM to follow through, otherwise you might get weird errors here or there, because of LLVM versions / installation method / installation locations / etc.
+
 > [!TIP]
 > If on Ubuntu, just run `make prereq` to install everything automatically (you may be asked to press <kbd>Enter</kbd> to accept LLVM's license agreement). Read [`Makefile`](./Makefile) for more details.
 - LLVM >= 16.0 installed (`./scripts/ubuntu-install-llvm.sh`)
