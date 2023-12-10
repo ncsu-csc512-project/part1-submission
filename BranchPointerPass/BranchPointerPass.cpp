@@ -1,3 +1,11 @@
+// CSC 512 Course Project
+//
+// Teddy Xinyuan Chen
+//
+//     xchen87
+//
+//     200539142
+
 #include "llvm/IR/DebugInfoMetadata.h"
 #include "llvm/IR/Function.h"
 #include "llvm/IR/InstIterator.h"
@@ -24,8 +32,6 @@ namespace {
 std::unordered_map<BranchInst *, int> branchIds;
 Json jsonBranches;
 int branchIdCounter = 1;
-
-// ... [previous includes and namespace declarations]
 
 void logBranchInstruction(BranchInst *BI, const std::string &filepath) {
   if (BI->isConditional()) {
@@ -95,9 +101,6 @@ llvm::PassPluginLibraryInfo getBranchPointerPluginInfo() {
 extern "C" ::llvm::PassPluginLibraryInfo llvmGetPassPluginInfo() {
   return getBranchPointerPluginInfo();
 }
-
-// ... [previous includes and namespace declarations]
-// ... [BranchPointerPass struct and getBranchPointerPluginInfo function]
 
 struct JsonFileWriter {
   ~JsonFileWriter() {
