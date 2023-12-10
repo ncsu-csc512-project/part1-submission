@@ -30,7 +30,7 @@
 
 Authors:
 
-- Teddy Xinyuan Chen (xchen87, [github.com/tddschn](https//github.com/tddschn)) - Part 1 & 3
+- Teddy Xinyuan Chen (xchen87, [github.com/tddschn](https://github.com/tddschn)) - Part 1 & 3
 - Haojie Zhou (hzhou33) - Part 2
 
 
