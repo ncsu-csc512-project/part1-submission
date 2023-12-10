@@ -62,6 +62,19 @@ void logBranchInstruction(BranchInst *BI, const std::string &filepath) {
   }
 }
 
+// ... [previous includes and namespace declarations]
+
+void logFunctionPointer(CallInst *CI, const std::string &filepath) {
+  if (Function *calledFunction = CI->getCalledFunction()) {
+    errs() << "*func_" << reinterpret_cast<void *>(calledFunction) << "\n";
+    jsonBranches.push_back(
+        {{"type", "func_ptr"},
+         {"filepath", filepath},
+         {"function_name", calledFunction->getName().str()},
+         {"address", reinterpret_cast<void *>(calledFunction)}});
+  }
+}
+
 void visitor(Function &F) {
   std::string filepath;
   if (DISubprogram *SP = F.getSubprogram()) {
@@ -72,9 +85,28 @@ void visitor(Function &F) {
     Instruction *Inst = &*I;
     if (BranchInst *BI = dyn_cast<BranchInst>(Inst)) {
       logBranchInstruction(BI, filepath);
+    } else if (CallInst *CI = dyn_cast<CallInst>(Inst)) {
+      logFunctionPointer(CI, filepath);
     }
   }
 }
+
+// ... [BranchPointerPass struct and getBranchPointerPluginInfo function]
+// ... [JsonFileWriter struct]
+//
+// void visitor(Function &F) {
+//   std::string filepath;
+//   if (DISubprogram *SP = F.getSubprogram()) {
+//     filepath = SP->getDirectory().str() + "/" + SP->getFilename().str();
+//   }
+//
+//   for (inst_iterator I = inst_begin(F), E = inst_end(F); I != E; ++I) {
+//     Instruction *Inst = &*I;
+//     if (BranchInst *BI = dyn_cast<BranchInst>(Inst)) {
+//       logBranchInstruction(BI, filepath);
+//     }
+//   }
+// }
 
 struct BranchPointerPass : PassInfoMixin<BranchPointerPass> {
   PreservedAnalyses run(Function &F, FunctionAnalysisManager &) {
