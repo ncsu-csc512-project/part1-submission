@@ -1,3 +1,5 @@
+// https://github.com/ncsu-csc512-project/part1-dev
+//
 // CSC 512 Course Project
 //
 // Teddy Xinyuan Chen
@@ -5,6 +7,8 @@
 //     xchen87
 //
 //     200539142
+//
+//     https://github.com/tddschn
 
 #include "llvm/IR/DebugInfoMetadata.h"
 #include "llvm/IR/Function.h"
