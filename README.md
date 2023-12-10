@@ -150,22 +150,17 @@ Replace `input.ll` with the LLVM IR file you want to analyze.
 ```
 $ make
 
-export LLVM_DIR=/usr/local/opt/llvm
-mkdir -p build
-cmake -DMY_LLVM_INSTALL_DIR=/usr/local/opt/llvm -S . -B build && cmake --build build
--- Configuring done (0.4s)
--- Generating done (0.1s)
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
 -- Build files have been written to: /Users/tscp/testdir/csc512-proj/part1-dev/build
 gmake[1]: Entering directory '/Users/tscp/testdir/csc512-proj/part1-dev/build'
-[ 50%] Building CXX object BranchPointerPass/CMakeFiles/BranchPointerPass.dir/BranchPointerPass.cpp.o
-[100%] Linking CXX shared module libBranchPointerPass.so
 [100%] Built target BranchPointerPass
 gmake[1]: Leaving directory '/Users/tscp/testdir/csc512-proj/part1-dev/build'
 opt -load-pass-plugin ./build/BranchPointerPass/libBranchPointerPass.so -passes=branch-pointer-pass -disable-output inputs/input.ll
-br_1: inputs/input.c, 19, 21
-br_2: inputs/input.c, 21, 23
-# opt -load-pass-plugin ./build/BranchPointerTracePass/libBranchPointerTracePass.so -passes=branch-pointer-trace -disable-output inputs/input.ll
-# opt -load-pass-plugin ./build/BranchPointerTracePass/libBranchPointerTracePass.so -passes=branch-pointer-trace -disable-output inputs/input.ll
+*funcptr_0x6000008d8380
+br_1: /Users/tscp/testdir/csc512-proj/part1-dev/inputs/input.c, 12, 13
+br_2: /Users/tscp/testdir/csc512-proj/part1-dev/inputs/input.c, 13, 13
+br_3: /Users/tscp/testdir/csc512-proj/part1-dev/inputs/input.c, 13, 14
 ```
 
 `dict.json` file generated when running the pass for storing the branching info:
